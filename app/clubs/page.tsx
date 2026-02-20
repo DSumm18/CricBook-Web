@@ -2,7 +2,14 @@ import Navbar from '../components/Navbar';
 import WaitlistForm from '../components/WaitlistForm';
 import { theme } from '../constants/theme';
 
-const PricingCard = ({ title, price, features, recommended = false }) => (
+type PricingCardProps = {
+  title: string;
+  price: string;
+  features: string[];
+  recommended?: boolean;
+};
+
+const PricingCard = ({ title, price, features, recommended = false }: PricingCardProps) => (
   <div 
     className={`
       p-6 rounded-lg shadow-md 
@@ -17,7 +24,7 @@ const PricingCard = ({ title, price, features, recommended = false }) => (
     <h3 className="text-2xl font-semibold mb-4">{title}</h3>
     <div className="text-4xl font-bold mb-4">£{price}/month</div>
     <ul className="space-y-3 mb-6">
-      {features.map((feature, index) => (
+      {features.map((feature: string, index: number) => (
         <li key={index} className="flex items-start">
           <span className="mr-2">✅</span>
           {feature}

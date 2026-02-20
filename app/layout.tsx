@@ -5,6 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cricbook.com'),
   title: 'CricBook — The Social Network for Cricket',
   description: 'Connect with your club, track your stats, rate the tea, and share your cricket life. For players, clubs, and leagues.',
   openGraph: {
